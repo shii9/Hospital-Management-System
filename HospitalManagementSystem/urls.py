@@ -1,0 +1,42 @@
+from django.contrib import admin
+from django.urls import path
+from hospitals.views import *
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('about/', About, name="about"),
+    path('', Index, name='index'),
+    path('contact', contact, name='contact'),
+    path('login', adminlogin, name='login'),
+    path('userlogin', userlogin, name='user_login'),
+    path('admin_home', admin_home, name='admin_home'),
+    path('user_home', user_home, name='user_home'),
+    path('logout', Logout, name='logout'),
+    path('add_doctor', add_doctor, name='add_doctor'),
+    path('add_nurse', add_nurse, name='add_nurse'),
+    path('view_doctor', view_doctor, name='view_doctor'),
+    path('user_view_doctor', user_view_doctor, name='user_view_doctor'),
+    path('view_nurse', view_nurse, name='view_nurse'),
+    path('user_view_nurse', user_view_nurse, name='user_view_nurse'),
+    path('delete_doctor/<int:pid>', Delete_Doctor, name='delete_doctor'),
+    path('delete_nurse/<int:pid>', Delete_nurse, name='delete_nurse'),
+    path('add_patient', add_patient, name='add_patient'),
+    path('add_wardboy', add_wardboy, name='add_wardboy'),
+    path('view_patient', view_patient, name='view_patient'),
+    path('view_wardboy', view_wardboy, name='view_wardboy'),
+    path('user_view_wardboy', user_view_wardboy, name='user_view_wardboy'),
+    path('delete_patient/<int:pid>', Delete_Patient, name='delete_patient'),
+    path('delete_wardboy/<int:pid>', Delete_wardboy, name='delete_wardboy'),
+    path('add_appointment', add_appointment, name='add_appointment'),
+    path('user_add_appointment', user_add_appointment, name='user_add_appointment'),
+    path('view_appointment', view_appointment, name='view_appointment'),
+    path('delete_appointment/<int:pid>', Delete_Appointment, name='delete_appointment'),
+    path('edit_doctor/<int:pid>', edit_doctor, name='edit_doctor'),
+    path('edit_nurse/<int:pid>', edit_nurse, name='edit_nurse'),
+    path('edit_patient/<int:pid>', edit_patient, name='edit_patient'),
+    path('edit_wardboy/<int:pid>', edit_wardboy, name='edit_wardboy'),
+    path('unread_queries', unread_queries, name='unread_queries'),
+    path('read_queries', read_queries, name='read_queries'),
+    path('view_queries/<int:pid>', view_queries, name='view_queries'),
+
+]
